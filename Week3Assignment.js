@@ -2,13 +2,13 @@
 //Question 1 Subtract the first element in the array from the last, programatatically 
 const ages = [ 3, 9, 23, 64, 2, 8, 28, 93];
 
-const firstLast = () => console.log( ages[ages.length - 1] - ages[0]);
+const firstLast = (arrayAny) => console.log( arrayAny[arrayAny.length - 1] - ages[0]);
 
-firstLast();
+firstLast(ages);
 
 ages.push(100); // Push a new number to the array to test if the function works
 
-firstLast();
+firstLast(ages);
 
 let sumOfAges = ages.reduce( (accumulator, currentValue) => accumulator + currentValue );
 
@@ -22,7 +22,7 @@ console.log(ageAverage);
 
 const names = [ 'Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
 
-
+console.log(names.join(' '));
 
 //Question 3 How do you access the last element of an array?
 // You can acces the last element of an array with    array[array.length - 1];
@@ -55,15 +55,12 @@ const averageLength = ( sumOfLengths / names.length);
 console.log(averageLength);
 
 
-//Question 7 This function returns paramater 'word', 'n' number of times
+//Question 7 This function returns paramater 'word', 'n' number of time
 
-const functionCon = ( word, n ) => {
-    for( i = 0; i < n; i++) {
-        console.log(word);
-    }
-}
+wordCounter = (word, n) => word.repeat(n);
 
-console.log(functionCon('Hey', 6));
+console.log(wordCounter( 'Hello', 3));
+
 
 //Question 8 This function returns a full name with a space, given 2 paramters first and last name
 
@@ -111,6 +108,8 @@ console.log(compareAverage(test1, nameLength));
 
 //Question 12 
 
+let isHotOutside = "";
+let moneyInPocket = "";
 
 function willBuyDrink( isHotOutside, moneyInPocket){
     return ( isHotOutside, ( moneyInPocket > 10.50));
@@ -118,10 +117,23 @@ function willBuyDrink( isHotOutside, moneyInPocket){
 
 console.log( willBuyDrink( true, 13));
 
-console.log (willBuyDrink(true, 10.25));
 
+//Question 13 a function that gives students encouragement based on their assignment scores
+// chose this function for fun and encouragment
 
+let wayToGo = (studentGrade) => {
+if( studentGrade >= 90){
+    console.log( 'You\'re a coding master!');
+}else if (studentGrade >= 80){
+    console.log("Excellent work, Keep it up!");
+} else if( studentGrade >= 70){
+    console.log('Not bad! Keep working hard!');
+}else{
+    console.log('You\'re doing great work! Continue working hard and it will pay off!');
+}
+}
 
-
-
-//Question 13
+wayToGo(92);
+wayToGo(84);
+wayToGo(75);
+wayToGo(43);
